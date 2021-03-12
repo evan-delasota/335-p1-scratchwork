@@ -15,7 +15,7 @@ int main() {
   std::cout << result.at(0) << " " << result.at(1) << "\n";
 
   std::cout << telegraphConvert("ab#      !?!?c!  ?2?   !") << "\n";
-  std::cout << telegraphConvert("ab#  ?ccb!  ?2?STOP");  
+  std::cout << telegraphConvert("g5s5rhGERGRFg5hdhb#  ?ccb!  ?2?STOP");  
 }
 
 int dipSearch(std::vector<int> v) {
@@ -47,6 +47,7 @@ std::vector<int> longestBalancedSpan(std::vector<int> v) {
   }
   best.push_back(subArrayMin);
   best.push_back(subArrayMax);
+  
   return best;
 }
 std::string telegraphConvert(std::string s) {
