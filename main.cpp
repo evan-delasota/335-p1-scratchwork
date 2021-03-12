@@ -50,6 +50,7 @@ std::vector<int> longestBalancedSpan(std::vector<int> v) {
   
   return best;
 }
+
 std::string telegraphConvert(std::string s) {
   if (s.length() == 0) {
     return s;
