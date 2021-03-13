@@ -61,26 +61,29 @@ std::string telegraphConvert(std::string s) {
   for (int i = 0; i < s.length(); ++i) {
     char ch = s.at(i);
     bool firstSpace = true;
-
+    // For loop to handle space characters
     while (ch == ' ' && s.at(i + 1) == ' ' && (i + 1 < s.length())) {
+      // Pushes first space found in string to telegraph string
       if (firstSpace) {
         telegraph.push_back(ch);
         firstSpace = false;
       }
+      // Increments i to skip over any subsequent spaces found
       i++;
     }
-
+    // block statement to handle string requirements
     if ((ch >= '0' && ch <= '9') || (ch >= 'A' && ch <= 'Z')) {
       telegraph.push_back(ch);
     } else if (ch >= 'a' && ch <= 'z') {
       telegraph.push_back(toupper(ch));
     } else if (ch == '!' || ch == '?' || ch == ';') {
       telegraph.push_back('.');
+    // skips over any unwanted elements
     } else {
       continue;
     }
   }
-
+  // Checks to see if "STOP" is at end of string
   if (s.substr((s.length() - 4), s.length()) != "STOP") {
     telegraph.append("STOP");    
   }
